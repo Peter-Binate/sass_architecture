@@ -1,0 +1,44 @@
+// *********************** 1. Ne pas structurer ***********************
+// "_" pour dire que c'est un module et qu'il ne faut pas le compiler
+
+// scss/
+//     -- _mixins.scss
+//     -- _variables.scss
+//     -- _placeholders.scss
+//     -- style.scss
+
+@import './_variables';
+@import './_mixins';
+@import './_placeholders';
+
+body{
+    height: 100vh;
+    @extend %flex-center;
+}
+
+// *********************** 2. Bien utiliser les variables ***************
+.title2{
+    text-align: center;
+    font-style: 80px;
+    color: $bleu-navy-principal;
+    @extend %flex-center;
+}
+
+// *********************** 3. Pas trop de @mixin ************************
+.box{
+    width: 200px;
+    height: 200px;
+    background: $bleu-navy-principal;
+    @include absolute-element(50%, 0, 0, 50%, -50%, -50%);
+}
+
+// Inutile d'imbriquer car il n'y a que 1 seule propriété
+nav{
+    ul{
+        li{
+            font-size: 500px;
+        }
+    }
+}
+
+

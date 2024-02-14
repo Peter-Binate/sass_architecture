@@ -1,0 +1,17 @@
+// BOUT DE CODE REUTILISABLE AVEC DES PAAMETRES
+@mixin absolute-element ($top, $right, $bottom, $left, $x, $y) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    transform: translate($x, $y);
+
+}    
+
+//pseudo element
+@mixin pseudo-element ($display: block, $position: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $position;
+}
